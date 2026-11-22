@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+.DS_Store
+__pycache__/
+node_modules/
+.vercel/
+.taste-skill/
+.impeccable/review/
+.impeccable/config.local.json
+supabase/.temp/
+supabase/.branches/
+test-results/
+playwright-report/

@@ -1,0 +1,14 @@
+{
+  "name": "founders-ai-os",
+  "private": true,
+  "description": "Founders AI OS: static app plus serverless functions in /api",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.11.1",
+    "mediabunny": "1.65.2",
+    "sharp": "0.35.5",
+    "tus-js-client": "4.3.1"
+  }
+}

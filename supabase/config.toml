@@ -1,0 +1,5 @@
+# Supabase CLI settings. Only needed if you run the database setup with the CLI:
+#   supabase link --project-ref <your-project-ref>
+#   supabase db push
+# The dashboard route in SETUP.md doesn't use this file.
+project_id = "founders-ai-os"

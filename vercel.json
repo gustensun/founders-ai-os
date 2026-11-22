@@ -1,0 +1,169 @@
+{
+  "cleanUrls": true,
+  "functions": {
+    "api/mcp.js": {
+      "includeFiles": "js/**",
+      "maxDuration": 30
+    },
+    "api/connect.js": {
+      "maxDuration": 60
+    },
+    "api/custom.js": {
+      "maxDuration": 60
+    },
+    "api/agents.js": {
+      "includeFiles": "js/**",
+      "maxDuration": 300
+    },
+    "api/video.js": {
+      "includeFiles": "js/**",
+      "maxDuration": 300
+    },
+    "api/cron.js": {
+      "includeFiles": "js/**",
+      "maxDuration": 300
+    },
+    "api/brain.js": {
+      "includeFiles": "js/**",
+      "maxDuration": 120
+    },
+    "api/morning.js": {
+      "includeFiles": "js/**",
+      "maxDuration": 120
+    },
+    "api/learning.js": {
+      "includeFiles": "js/**",
+      "maxDuration": 30
+    },
+    "api/chat.js": {
+      "includeFiles": "js/**",
+      "maxDuration": 800
+    },
+    "api/goals.js": {
+      "maxDuration": 60
+    },
+    "api/jarvis.js": {
+      "maxDuration": 60
+    },
+    "api/funnel.js": {
+      "includeFiles": "js/**",
+      "maxDuration": 300
+    },
+    "api/inbox.js": {
+      "maxDuration": 60
+    },
+    "api/config.js": {
+      "maxDuration": 15
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/config.js",
+      "destination": "/api/config"
+    },
+    {
+      "source": "/g/:ws/:key/:name",
+      "destination": "/api/funnel?gws=:ws&k=:key&a=:name"
+    },
+    {
+      "source": "/preview/:id/:key/assets/:name",
+      "destination": "/api/funnel?pid=:id&k=:key&a=:name"
+    },
+    {
+      "source": "/preview/:id/:key",
+      "destination": "/api/funnel?pid=:id&k=:key"
+    },
+    {
+      "source": "/mcp",
+      "destination": "/api/mcp"
+    },
+    {
+      "source": "/login",
+      "destination": "/"
+    },
+    {
+      "source": "/signup",
+      "destination": "/"
+    },
+    {
+      "source": "/forgot",
+      "destination": "/"
+    },
+    {
+      "source": "/reset",
+      "destination": "/"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), geolocation=(), payment=(), usb=(), microphone=(self)"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin-allow-popups"
+        }
+      ]
+    },
+    {
+      "source": "/((?!preview/|g/|api/|frame).*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: blob: https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.pwnedpasswords.com https://api.elevenlabs.io wss://api.elevenlabs.io; frame-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+        }
+      ]
+    },
+    {
+      "source": "/frame(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "sandbox allow-scripts allow-popups; frame-ancestors 'self'"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/agents",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron",
+      "schedule": "0 5 * * *"
+    }
+  ]
+}
