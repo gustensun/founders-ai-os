@@ -1737,18 +1737,23 @@ label.cf-idea:has(input:focus-visible) { outline: 2px solid var(--text); outline
 .nfs-bar .ap-filter{display:inline-flex;align-items:center;gap:8px}
 .nfs-sort{flex:none}
 .nfs-note{margin:0 0 14px}
+/* Prefixed layout classes: the plain .split class is the revenue bar (10px tall, overflow hidden). */
 .nfs-body{display:block}
-.nfs-body.split{display:grid;grid-template-columns:132px minmax(0,1fr);gap:16px;align-items:start}
-.nfs-thumb{display:block;overflow:hidden;border-radius:10px;background:var(--raised)}
+.nfs-body.nfs-split{display:grid;grid-template-columns:132px minmax(0,1fr);gap:16px;align-items:start}
+.nfs-thumb{position:relative;display:block;overflow:hidden;border-radius:10px;background:var(--raised)}
 .nfs-thumb img{display:block;width:100%;height:100%;object-fit:cover}
-.nfs-body.wide .nfs-thumb{aspect-ratio:16/9;margin-bottom:14px}
-.nfs-body.split .nfs-thumb{aspect-ratio:4/5}
+.nfs-body.nfs-wide .nfs-thumb{aspect-ratio:16/9;margin-bottom:14px}
+.nfs-body.nfs-split .nfs-thumb{aspect-ratio:4/5}
+/* A Short's standard image is its 9:16 frame centered between blurred bars and spanning the full height.
+   At 142.22% of a 4:5 box's height the frame is exactly as wide as the box; 144% trims a sliver more
+   so no edge of a bar shows. */
+.nfs-body.nfs-frame .nfs-thumb img{position:absolute;left:50%;top:30%;width:auto;max-width:none;height:144%;transform:translate(-50%,-30%)}
 .nfs-copy{min-width:0}
 .nfs-text{margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-line}
 .nfs-stats{display:flex;flex-wrap:wrap;gap:6px 14px;margin:10px 0 0;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
 .nfs-x{color:var(--text);font-weight:500}
 .nfs-x.hot{color:var(--text);font-weight:600}
-@media (max-width:620px){.nfs-body.split{grid-template-columns:96px minmax(0,1fr);gap:12px}}
+@media (max-width:620px){.nfs-body.nfs-split{grid-template-columns:96px minmax(0,1fr);gap:12px}}
 .nfs-bar{flex-direction:column;align-items:stretch;gap:12px}
 .nfs-bar .nf-chips{flex:none}
 .nfs-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
