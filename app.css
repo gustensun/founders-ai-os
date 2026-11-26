@@ -52,7 +52,7 @@ svg { display: block; }
 .app { display: grid; grid-template-columns: var(--sidebar-width) minmax(0, 1fr); min-height: 100svh; }
 .sidebar { position: sticky; top: 0; height: 100svh; display: flex; flex-direction: column; border-right: 1px solid var(--border); padding: 0 12px 14px; overflow-x: hidden; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--control) transparent; }
 .brand { height: var(--topbar); display: flex; align-items: center; gap: 10px; flex: none; box-sizing: border-box; padding: 4px 8px 0 20px; margin: 0 -12px 8px; border-bottom: 1px solid var(--border); }
-.brand b { font: 400 22px/1 "Instrument Serif", Georgia, serif; letter-spacing: -0.005em; white-space: nowrap; }
+.brand b { font: 600 19px/1 "Bricolage Grotesque", var(--font), system-ui, sans-serif; letter-spacing: -0.025em; white-space: nowrap; }
 .brand .mark { width: 22px; height: 22px; color: var(--text); display: grid; place-items: center; flex: none; }
 .brand .mark svg { display: block; }
 .group-label { margin: 14px 8px 4px; font-size: var(--fs-small); color: var(--faint); }

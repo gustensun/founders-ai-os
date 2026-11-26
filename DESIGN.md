@@ -38,11 +38,11 @@ colors:
   dark-signal: "#ef9660"
 typography:
   wordmark:
-    fontFamily: "Instrument Serif, Georgia, serif"
-    fontSize: "22px"
-    fontWeight: 400
+    fontFamily: "Bricolage Grotesque, Geist, system-ui, sans-serif"
+    fontSize: "19px"
+    fontWeight: 600
     lineHeight: 1
-    letterSpacing: "-0.005em"
+    letterSpacing: "-0.025em"
   display:
     fontFamily: "Geist, system-ui, -apple-system, Segoe UI, sans-serif"
     fontSize: "clamp(34px, 4vw, 52px)"
@@ -277,7 +277,7 @@ Color is almost absent from the working UI. Ordinary actions are ink; destructiv
 **Key Characteristics:**
 - Pure white light canvas, sidebar, top bar, inputs and composer.
 - Neutral charcoal dark mode with near-white primary controls.
-- Geist for all working UI and headings; Instrument Serif only in the Founders OS wordmark.
+- Geist for all working UI and headings; Bricolage Grotesque only in the Founders OS wordmark.
 - Sections separated by spacing and 1px rules instead of nested containers.
 - Borders reserved for things you type into, select, or open as an isolated artifact.
 - Ink primary actions; semantic color for state and destructive intent.
@@ -321,12 +321,12 @@ Dark mode maps one to one: `charcoal-ground` for the page, sidebar, top bar and 
 
 **Display Font:** Geist (with system-ui, -apple-system, Segoe UI, sans-serif)
 **Body Font:** Geist (same stack)
-**Wordmark Font:** Instrument Serif (with Georgia, serif)
+**Wordmark Font:** Bricolage Grotesque, weight 600 (with Geist as fallback)
 
-**Character:** One neutral grotesque carries every working role, tightened with negative tracking at heading sizes. The serif appears once, in the sidebar wordmark, as the brand signature. Geist loads from Google Fonts at weights 400, 450, 500, 550, 600, 650 and 700, and the intermediate 450 and 550 weights are used for nav labels and selected states.
+**Character:** One neutral grotesque carries every working role, tightened with negative tracking at heading sizes. Bricolage Grotesque appears once, in the sidebar wordmark, as the brand signature. Geist loads from Google Fonts at weights 400, 450, 500, 550, 600, 650 and 700, and the intermediate 450 and 550 weights are used for nav labels and selected states.
 
 ### Hierarchy
-- **Wordmark** (400, 22px, line-height 1): "Founders OS" in the sidebar brand row only.
+- **Wordmark** (600, 19px, line-height 1, -0.025em): "Founders OS" in the sidebar brand row only.
 - **Display** (500, clamp(34px, 4vw, 52px), 1.02): The Jarvis and Live home headings.
 - **Headline** (500, clamp(26px, 2.5vw, 34px), 1.2, balanced wrap): The Chat welcome question and other centered empty-state headlines.
 - **Title** (600, 25px, 1.2): Page titles in the title row. Chat uses a compact 19px title so the conversation leads.
@@ -339,7 +339,7 @@ Dark mode maps one to one: `charcoal-ground` for the page, sidebar, top bar and 
 - **Caption** (400, 11px, 1.5): Group labels, status pills, footnotes, timestamps.
 
 ### Named Rules
-**The One Serif Rule.** Instrument Serif is the wordmark and nothing else. The legacy `--serif` variable is aliased to Geist, so older serif roles render in Geist; keep it that way.
+**The One Wordmark Face Rule.** Bricolage Grotesque is the wordmark and nothing else. The legacy `--serif` variable is aliased to Geist, so older serif roles render in Geist; keep it that way.
 
 **The Sentence Case Rule.** Headings, labels, tabs and group labels are sentence case at normal tracking. Hierarchy is weight and size, not uppercase letter-spacing.
 
@@ -438,7 +438,7 @@ The left list in Graphics and Funnel Agent: borderless 8px rows with 10px paddin
 - **Don't** tint the light-mode app background warm or ivory; the white direction replaced the previous warm styling.
 - **Don't** wrap a content section in a bordered or filled card, or nest one container inside another to group content.
 - **Don't** use Signal Orange or semantic colors for ordinary actions, focus or selection. Negative Red is reserved for errors and destructive actions.
-- **Don't** set working UI, headings or numbers in Instrument Serif.
+- **Don't** set working UI, headings or numbers in Bricolage Grotesque.
 - **Don't** add uppercase, letter-spaced eyebrow labels above headings.
 - **Don't** add drop shadows to panels, lists, the composer, menus or dialogs.
 - **Don't** recolor generated graphics, Brand DNA artwork or funnel page previews to the workspace palette; frame them instead.
